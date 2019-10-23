@@ -1,0 +1,22 @@
+@model Wedding
+
+<h1>@Model.WedderOne & @Model.WedderTwo's Wedding</h1>
+<a href="/wedding">Dashboard</a>
+<a asp-action="logout" asp-controller="Home">Log Out</a>
+
+<h2>Date: @Model.Date.ToString("MMM d yyyy")</h2>
+<h3>Guest List:</h3>
+
+@if(@Model.GuestList.Count == 0)
+{
+    <p>Nobody is going yet.</p>
+}
+else
+{
+    <ul>
+    @foreach(var g in @Model.GuestList)
+    {
+        <li>@g.Guest.FirstName @g.Guest.LastName</li>
+    }
+    </ul>
+}

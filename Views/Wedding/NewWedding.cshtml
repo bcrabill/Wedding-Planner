@@ -1,0 +1,16 @@
+@model Wedding
+<H1>Plan a wedding!</H1>
+<form asp-action="CreateWedding" asp-controller="Wedding" method="post">
+    <label asp-for="WedderOne"></label>
+    <input asp-for="WedderOne"><br>
+    <label asp-for="WedderTwo"></label>
+    <input asp-for="WedderTwo"><br>
+    <label asp-for="Date"></label>
+    <input asp-for="Date"><br>
+    <label asp-for="Address"></label>
+    <input asp-for="Address"><br>
+    <input type="submit" value="Create" class="btn btn-danger">
+    </form>
+
+<div asp-validation-summary="All"></div>
+
